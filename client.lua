@@ -47,7 +47,7 @@ end
 
 local random = randomString
 
-local data = jsondecode(http_request_get("https://whitelist.com/server.php?key=".. key .."&random="..random))
+local data = jsondecode(http_request_get("https://saijikung.github.io/Whitelist/server.php?key=".. key .."&random="..random))
 
 if data.Key == key then
     if data.Blacklist == "False" then
@@ -56,7 +56,7 @@ if data.Key == key then
                 if data.Hwid == "Unknown" then
                     -- update hwid
                     print("Whitelist !!!")
-                    http_request_get("https://whitelist.com/changehwid.php?key=".. key .."&hwid="..hwid)
+                    http_request_get("https://saijikung.github.io/Whitelist/changehwid.php?key=".. key .."&hwid="..hwid)
                     print("Update Hwid")
                 else
                     -- no update hwid
